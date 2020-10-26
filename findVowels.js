@@ -6,7 +6,8 @@ const countVowels = str => {
     return count ? count.length : 0
 }
 
-console.log(countVowels('plk'))
+// console.log(countVowels('plk'))
+console.log(countVowels('ocean'))
 
 
 
@@ -17,3 +18,4 @@ console.log(countVowels('plk'))
 // }
 
 // findVowelsCount1('ocean')
+
