@@ -12,28 +12,19 @@
 
 
 const groupTransactions = transactions => {
-    let txCount = {};
+    let txCount = {}
     //Count the number of trans for each item and put in obj (freq counter)
     for(let item of transactions){
         txCount[item] ? txCount[item] += 1 : txCount[item] = 1
     }
 
-    //Convert into array and sort descending by trans # 
+    //Convert object into array 
     let descSort = Object.entries(txCount)
-    
-    for(let i = 0; i < descSort.length; i++){
-        let highest = i 
-        for(let j = i + 1; j < descSort.length; j++){
-            if(descSort[j] > descSort[highest]) highest = j   
-        }
-            if(i !== highest){
-                let temp = descSort[i]
-                descSort[i] = descSort[highest]
-                descSort[highest] = temp
-            }
-    }
 
-    //Sort ascending alphabetically ONLY for item names with matching trans #
+    //Sort descending by trans number
+    descSort.sort((a, b) => { return b[1] - a[1] })
+
+    //Sort ascending alphabetically ONLY for item names with matching trans number
     let alphaArr = descSort.sort((a, b) => {
         if(a[1] === b[1]){
             let x = a[0]
@@ -52,3 +43,19 @@ const groupTransactions = transactions => {
 
 
 console.log(groupTransactions(['purse', 'purse', 'belt', 'jeans', 'jeans']))
+
+
+
+//-----old way I was doing descending sort-----//
+
+    // for(let i = 0; i < descSort.length; i++){
+    //     let highest = i 
+    //     for(let j = i + 1; j < descSort.length; j++){
+    //         if(descSort[j] > descSort[highest]) highest = j   
+    //     }
+    //         if(i !== highest){
+    //             let temp = descSort[i]
+    //             descSort[i] = descSort[highest]
+    //             descSort[highest] = temp
+    //         }
+    // }
