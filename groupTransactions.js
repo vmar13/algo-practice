@@ -18,7 +18,7 @@ const groupTransactions = transactions => {
         txCount[item] ? txCount[item] += 1 : txCount[item] = 1
     }
 
-    //Convert into array and sort descending my trans # and then asc alpha
+    //Convert into array and sort descending by trans # 
     let descSort = Object.entries(txCount)
     
     for(let i = 0; i < descSort.length; i++){
@@ -33,31 +33,21 @@ const groupTransactions = transactions => {
             }
     }
 
-    // let newArr = descSort.sort((a,b) => {
-    //     if(a[1] === b[1]) return a[0] - b[0]
-    // }) 
+    //Sort ascending alphabetically ONLY for item names with matching trans #
+    let alphaArr = descSort.sort((a, b) => {
+        if(a[1] === b[1]){
+            let x = a[0]
+            let y = b[0]
 
-    let newArr =descSort.sort((a, b) => {
-        if(a[1] === b[1]) a[0] - b[0]
+            return x < y ? -1 : x > y ? 1 : 0
+        }
+        return a[0] - b[0]
     })
 
-    return newArr
-    // let strArr = descSort.map(ele => ele.toString('').replace(',', ' '))
- 
-     
+    //Convert each array element to single string and replace comma with space  
+    let finalArr = alphaArr.map(ele => ele.toString('').replace(',', ' '))
+    return finalArr
 
-    
-    // newArr.sort((a,b) => {
-    //     return a.length - b.length
-    // })
-    // let newArr = descSort.map(ele => ele[1] === descSort[i])
-
-
-    // for(let i = 0; i < descSort.length; i++){
-    //     for(let j = 1; j < descSort.length; j++){
-    //          if(descSort.map(ele => ele[1] === descSort[i])) 
-    //     }
-    // }
 }
 
 
