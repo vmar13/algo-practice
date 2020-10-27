@@ -33,12 +33,17 @@ const groupTransactions = transactions => {
             }
     }
 
-    let newArr = descSort.sort((a,b) => {
-        if(a[1] === b[1]) return a[0] - b[0]
-    }) 
+    // let newArr = descSort.sort((a,b) => {
+    //     if(a[1] === b[1]) return a[0] - b[0]
+    // }) 
 
+    let newArr =descSort.sort((a, b) => {
+        if(a[1] === b[1]) a[0] - b[0]
+    })
+
+    return newArr
     // let strArr = descSort.map(ele => ele.toString('').replace(',', ' '))
-return newArr 
+ 
      
 
     
