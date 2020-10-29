@@ -12,6 +12,7 @@
 
 
 const groupTransactions = transactions => {
+
     let txCount = {}
     //Count the number of trans for each item and put in obj (freq counter)
     for(let item of transactions){
@@ -59,3 +60,4 @@ console.log(groupTransactions(['purse', 'purse', 'belt', 'jeans', 'jeans']))
     //             descSort[highest] = temp
     //         }
     // }
+
