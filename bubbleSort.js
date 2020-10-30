@@ -4,23 +4,23 @@
 // If arr[j] is greater than arr[j + 1], swap those two values
 // Return the sorted array.
 
-const bubbleSort = (arr) => {
-    let noSwaps;
+const bubbleSort = arr => {
+    let noSwaps
     for(let i = arr.length; i > 0; i--){
-        noSwaps = true;
+        noSwaps = true 
         for(let j = 0; j < i - 1; j++){
-            console.log(arr, arr[j], arr[j+1])
-            if(arr[j] > arr[j+1]){
-                //SWAP
+            // console.log(arr, arr[j], arr[j+1])
+            if(arr[j] > arr[j + 1]){
+                //SWAP -- place large values on the end
                 let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp 
-                noSwaps = false;
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+                noSwaps = false
             }
         }
-        if(noSwaps) break;
+        if(noSwaps) break 
     }
-    return arr
+    return arr 
 }
 
 console.log(bubbleSort([37, 45, 58, 9]))
