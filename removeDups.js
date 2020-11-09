@@ -1,19 +1,22 @@
 //Remove duplicate values from a sorted array (not actually removing, just reordering). 
 //Return the length of the unique values. Do not modify the original array.
 
+let nums = [1, 1, 2, 3, 4, 4]
 
 const removeDuplicates = nums => {
     if(nums.length === 0) return 0
     
-    let pointer1 = 0
-    for(let pointer2 = 1; pointer2 < nums.length; pointer2++){
-        if(nums[pointer1] !== nums[pointer2]){
-            pointer1++
-            nums[pointer1] = nums[pointer2]
+    let p1 = 0
+    for(let p2 = 1; p2 < nums.length; p2++){
+        if(nums[p1] !== nums[p2]){
+            p1++
+            nums[p1] = nums[p2]
         }
     }
-    return pointer1 + 1
+    return p1 + 1
 }
+
+console.log(removeDuplicates(nums))
 
 
 // function removeDuplicates(nums) {
