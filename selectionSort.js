@@ -11,17 +11,28 @@
 //with, swap the two values.
 //Repeat this with the next element until the array is sorted.
 
+//a loop, plus a loop, plus a conditional and then a swap
+
+let arr = [34, 4, 9, 23, 78, 35]
 
 const selectionSort = arr => {
-    for(let i = 0;)
+
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[j] < arr[min]){
+                min = j 
+            }
+        }
+        let temp = arr[i]
+        arr[i] = arr[min]
+        arr[min] = temp
+    }
+    return arr 
 }
 
 
-
-
-
-
-console.log(selectionSort([34, 4, 9, 23, 78, 35]))
+console.log(selectionSort(arr))
 
 
 

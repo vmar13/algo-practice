@@ -12,3 +12,4 @@ const maxProfit = prices => {
 }
 
 console.log(maxProfit(prices))
+
