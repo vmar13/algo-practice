@@ -6,15 +6,19 @@
 //to place the element in the correct place.
 //Repeat until the array is sorted.
 
-let arr = [4,2,3,56,34]
+let arr = [4, 2, 30, 1, 7, 56, 34]
 
 const insertionSort = arr => {
     for(let i = 1; i < arr.length; i++){
-        if(arr[i] < arr[i - 1]){
-            let temp = arr[i - 1]
-            arr[i - 1] = arr[i]
-            arr[i] = temp
+        let currentVal = arr[i]
+        for(let j = i - 1; j >= 0 && arr[j] > currentVal; j--){
+            
         }
+        // if(arr[i] < arr[i - 1]){
+        //     let temp = arr[i - 1]
+        //     arr[i - 1] = arr[i]
+        //     arr[i] = temp
+        // }
     }
     return arr 
 }
