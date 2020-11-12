@@ -9,6 +9,13 @@ const merge = (arr1, arr2) => {
         if(arr2[j] > arr1[i]){
             results.push(arr1[i])
             i++
-        } 
+        } else {
+            results.push(arr2[j])
+            j++
+        }
+    }
+    while(i < arr1.length){
+        results.push(arr1[i])
+        i++
     }
 }
