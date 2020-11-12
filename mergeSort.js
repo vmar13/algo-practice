@@ -27,15 +27,15 @@ const merge = (arr1, arr2) => {
 
 // console.log(merge([23, 76], [3,6,8,45]))
 
-let arr = [34, 45, 6, 7, 99]
+// let arr = [34, 45, 6, 7, 99]
 
-const getHalf = arr => {
-    //To get the first half of an array
-    // Math.floor(arr.length/2)
-    //start at index 0 and select everything up until BEFORE index 3
-    return arr.slice(0,3)
+// const getHalf = arr => {
+//     //To get the first half of an array
+//     // Math.floor(arr.length/2)
+//     //start at index 0 and select everything up until BEFORE index 3
+//     return arr.slice(0,3)
     
-}
+// }
 
 // console.log(getHalf(arr))
 
@@ -44,6 +44,7 @@ const mergeSort = arr => {
     let mid = Math.floor(arr.length/2)
     let left = mergeSort(arr.slice(0,mid))
     let right = mergeSort(arr.slice(mid))
+    return mergeSort(left, right)
 }
 
-console.log(mergeSort(arr))
+console.log(mergeSort([10,24,76,73]))
