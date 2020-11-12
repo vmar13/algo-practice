@@ -25,4 +25,16 @@ const merge = (arr1, arr2) => {
     return results
 }
 
-console.log(merge([23, 76], [3,6,8,45]))
+// console.log(merge([23, 76], [3,6,8,45]))
+
+let arr = [34, 45, 6, 7, 99]
+
+const getHalf = arr => {
+    //To get the first half of an array
+    // Math.floor(arr.length/2)
+    //start at index 0 and select everything up until BEFORE index 3
+    return arr.slice(0,3)
+    
+}
+
+console.log(getHalf(arr))
