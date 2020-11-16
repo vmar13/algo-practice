@@ -18,5 +18,15 @@ const merge = (arr1, arr2) => {
             j++
         }
     }
+    while(i < arr1.length){
+        results.push(arr1[i])
+        i++
+    }
+    while(j < arr2.length){
+        results.push(arr2[j])
+        j++
+    }
     return results
 }
+
+console.log(merge([2,3,7,10], [5,8,60]))
