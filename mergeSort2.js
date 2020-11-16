@@ -1,28 +1,26 @@
-//-----MERGE-----//
-
-// const merge = (arr1, arr2) => {
-//     let results = []
-//     let i = 0
-//     let j = 0
-//     while(i < arr1.length && j < arr2.length){
-//         if(arr2[j] > arr1[i]){
-//             results.push(arr1[i])
-//             i++
-//         } else {
-//             results.push(arr2[j])
-//             j++
-//         }
-//     }
-//     while(i < arr1.length){
-//         results.push(arr1[i])
-//         i++
-//     }
-//     while(j < arr2.length){
-//         results.push(arr2[j])
-//         j++
-//     }
-//     return results
-// }
+const merge = (arr1, arr2) => {
+    let results = []
+    let i = 0
+    let j = 0
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i])
+            i++
+        } else {
+            results.push(arr2[j])
+            j++
+        }
+    }
+    while(i < arr1.length){
+        results.push(arr1[i])
+        i++
+    }
+    while(j < arr2.length){
+        results.push(arr2[j])
+        j++
+    }
+    return results
+}
 
 // console.log(merge([2,3,7,10], [5,8,60]))
 
@@ -33,23 +31,17 @@
 //Merge every 2 four-digit arrays into 1 (comparing 8 values)
 //Continue until you reach the final merge
 
-let arr = [2, 3, 5, 7, 8, 10, 60]
+let arr = [2, 8, 5, 7, 1, 10, 6]
 
 const mergeSort = arr => {
     if(arr.length <= 1) return arr 
 
     let half = Math.floor(arr.length / 2)
-    let firstHalf = arr.slice(0,half)
-    let secHalf = arr.slice(half)
-    return firstHalf
+    let firstHalf = mergeSort(arr.slice(0,half))
+    let secHalf = mergeSort(arr.slice(half))
+    return merge(firstHalf, secHalf)
 }
 
-// const getHalf = arr => {
-//     let half =  Math.floor(arr.length / 2)
-
-//     return half
-// }
-
 console.log(mergeSort(arr))
-//-----SORT-----//
+
 
