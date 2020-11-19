@@ -8,7 +8,9 @@ const singleNum = nums => {
     
     for(let num of nums){
         counterObj[num] = counterObj[num] + 1 || 1
-       
+        if(counterObj[num] === 1){
+            return counterObj[num]
+        } 
     }   
 }
 
