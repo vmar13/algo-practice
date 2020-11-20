@@ -1,7 +1,7 @@
 //Given a non-empty array of integers nums, every element appears twice except for one.
 //Find that single one.
 
-let numbers = [2,2,1,1,4,5,5]
+let numbers = [2,2,1,1,4,5,5,4,7]
 
 const singleNum = nums => {
     let counterObj = {}
