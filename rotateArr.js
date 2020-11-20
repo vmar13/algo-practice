@@ -2,13 +2,21 @@
 
 let nums = [1,2,3,4,5,6,7]
 
+// const rotate = (nums, k) => {
+//     let rotated = nums.splice(-k)
+
+//     // for(let num of nums){
+//     //     rotated.push(num)
+//     // }
+//     return rotated
+// }
+
+
 const rotate = (nums, k) => {
     let rotated = nums.splice(-k)
 
-    for(let num of nums){
-        rotated.push(num)
-    }
+    rotated.push(...nums)
     return rotated
 }
 
-console.log(rotate(nums, 3))
+console.log(rotate(nums, 2))
