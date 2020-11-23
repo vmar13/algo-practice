@@ -1,3 +1,4 @@
+
 const merge = (arr1, arr2) => {
     let results = []
     let i = 0
@@ -43,5 +44,6 @@ const mergeSort = arr => {
 }
 
 console.log(mergeSort(arr))
+
 
 
