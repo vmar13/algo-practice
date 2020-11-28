@@ -10,4 +10,6 @@ const recursiveBubbleSort = (arr, n = arr.length) => {
           [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
         }
       }
+
+      return recursiveBubbleSort(arr, n-1);
 }
