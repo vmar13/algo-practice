@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', e => {
                 
                 for(let keyObj in mostRecentDeploys) {
                     if(keyObj === 'platform-api'){
-                        console.log(mostRecentDeploys[keyObj])
+                        let platAPIObjs = mostRecentDeploys[keyObj]
+                        console.log(platAPIObjs.deployed_at)
                     }
                 }
             })      
