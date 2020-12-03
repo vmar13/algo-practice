@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', e => {
                 let mostRecentDeploys = objEle.most_recent_deploys
                 
                 for(let keyObj in mostRecentDeploys) {
-                    console.log(keyObj)
+                    if(keyObj === 'platform-api'){
+                        console.log(mostRecentDeploys[keyObj])
+                    }
                 }
             })      
         })  
