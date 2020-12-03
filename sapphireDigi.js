@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', e => {
         .then(res => res.json())
         .then(data => {
             data.client_environments.forEach(objEle => {
-                console.log(objEle.most_recent_deploys)
+                let mostRecentDeploys = objEle.most_recent_deploys
+                
+                for(let keyObj in mostRecentDeploys) {
+                    console.log(keyObj)
+                }
             })      
         })  
     }
