@@ -5,7 +5,15 @@ const multDupesArr = arr => {
   let dupesArr = []
   
   for(let i = 0; i < arr.length; i++) {
- 
+    if(observed[arr[i]]) {
+        if(observed[arr[i]] === 1) {
+          dupesArray.push(arr[i])
+        }
+        
+        observed[arr[i]] = observed[arr[i]] + 1
+      } else {
+        observed[arr[i]] = 1
+      }
   }
   
   return dupesArr
