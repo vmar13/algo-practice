@@ -24,7 +24,11 @@ const mixedPotions =potions => { //arg = array of obejcts
         }
     }
     // Use store to find concentration of each ingredient
-    
+    for(let numerator in store){
+        //difference between bracket and dot notation?
+        newPotion["ingredients"][numerator] = store[numerator] / volumeTotal;
+        newPotion.volume = volumeTotal;
+    }
     return newPotion
 }
 
