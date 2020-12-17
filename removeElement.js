@@ -31,6 +31,6 @@ var removeElement = function(nums, val) {
         }
     }
  return nums.length
-};
+}
 
 console.log(removeElement(nums, 3))
