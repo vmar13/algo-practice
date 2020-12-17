@@ -13,7 +13,18 @@ const mixedPotions =potions => { //arg = array of obejcts
         volumeTotal += potionObj.volume 
     }
 
-   
+    let store = {};
+    // Sum the numerators for each ingredient
+    for(let potionObj of potions) { //[{volume, ingredients:{}}]
+        const ingObj = potionObj.ingredients
+        const volume = potionObj.volume
+        for (let ing in ingObj) { // ingredients: {x,y,z}
+            const ingredient = ingObj[ing];
+            store[ing] ? store[ing] += ingredient * volume : store[ing] = ingredient * volume; 
+        }
+    }
+    // Use store to find concentration of each ingredient
+    
     return newPotion
 }
 
