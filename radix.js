@@ -10,7 +10,7 @@ const digitCount  = num => {
 const mostDigits = num => {
     let maxDigits = 0 
     for(let i = 0; i < nums.length; i++) {
-
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
     }
     return maxDigits
 }
