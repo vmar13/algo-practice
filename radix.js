@@ -23,9 +23,7 @@ const radixSort = nums => {
             let digit = getDigit(nums[i], k)
             digitBuckets[digit].push(nums[i])
         }
-        console.log(digitBuckets)
         nums = [].concat(...digitBuckets)
-        console.log(nums)
     }
 }
 
