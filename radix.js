@@ -20,7 +20,10 @@ const radixSort = nums => {
     for(let k = 0; k < maxDigitCount; k++){
         let digitBuckets = Array.from({length: 10}, () => [])
         for(let i = 0; i < nums.length; i++) {
-            getDigit(nums[i], k)
+            digitBuckets[getDigit(nums[i], k)].push(nums[i])
         }
+        console.log(digitBuckets)
     }
 }
+
+radixSort([45,56,67,233,4,32])
