@@ -2,7 +2,7 @@ const firstNonRepeatChar = str => {
     let len = str.length,
         char, 
         charCount = {}
-    for(var i =0; i<len; i++){
+    for(var i = 0; i < len; i++){
       char = str[i]
       if(charCount[char]){
         charCount[char]++
@@ -10,5 +10,8 @@ const firstNonRepeatChar = str => {
       else
         charCount[char] = 1
     }
-  
+    for (var j in charCount){
+        if (charCount[j] === 1)
+           return j
+    }
   }  
