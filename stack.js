@@ -17,5 +17,11 @@ function Stack() {
         return result;
       }
     
-     
+      this.peek = function () {
+        return this.storage[this.count - 1];
+      }
+    
+      this.size = function () {
+        return this.count;
+      }
     }
