@@ -1,25 +1,24 @@
 //Write a function that takes in two strings and determines if they're
 //anagrams of each other. If so, return true. If not, return false.
 
-const verifyAnagram = (str1, str2) => {
+
+
+
+// console.log(incrementIfZero1(1,0))
+// console.log(incrementIfZero2(3,0))
+
+const validAnagram = (str1, str2) => {
     if(str1.length !== str2.length) return false
-    let str1Obj = {}
-    for(let char of str1){
-        str1Obj[char] ? str1Obj[char] += 1 : str1Obj[char] = 1
+
+    let str1Obj = {};
+    for (let char of str1){
+        str1Obj[char] = str1Obj[char]+1 || 1
+        // str1Obj[char] ? str1Obj[char]+=1 : str1Obj[char] = 1
     }
-    
-    // let str2Obj = {}
-    for(let char of str2){
-        if(!str1Obj[char]){
-            return false
-        } else {
-            str1Obj[char] -= 1
-        }  
-        return true 
-    }
+    return str1Obj
 }
 
-console.log(verifyAnagram('oncea', 'ocean'))
+console.log(validAnagram('listene', 'silente'))
 
 
 
@@ -44,4 +43,4 @@ console.log(verifyAnagram('oncea', 'ocean'))
 //     return true
 // }
 
-// validAnagram('anagram', 'nagaram')
+// console.log(validAnagram('anagram', 'nagaram'))
