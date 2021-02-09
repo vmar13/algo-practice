@@ -21,7 +21,29 @@ const validAnagram = (str1, str2) => {
 console.log(validAnagram('listene', 'silente'))
 
 
+function incrementIfZero1(base,element) {
 
+    if (element == 0) {
+        return ++base;
+    }
+    else
+    {
+        return base;
+    }
+};
+
+
+
+function incrementIfZero2(base,element) {
+
+    if (element == 0) {
+        return base+=1;
+    }
+    else
+    {
+        return base;
+    }
+};
 
 // validAnagram = (str1, str2) => {
 //     if(str1.length !== str2.length) {
