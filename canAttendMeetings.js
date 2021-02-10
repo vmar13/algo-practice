@@ -11,13 +11,19 @@ const canAttendMeetings = (intervals) => {
     let end = intervals[0][1];
 
     for(let i = 1; i < intervals.length; i++) {
+        // console.log(end, intervals[i])
+
+        //If end point is greater than the next subarray's start point, return false
+        //If end point is less than the next subarray's end point, reassign it
+        
         if(end > intervals[i][0]) return false;
         if(end < intervals[i][1]) end = intervals[i][1];
     }
 
-    return intervals.length
+    return true; 
+ 
 }
 
 console.log(canAttendMeetings([[7,10],[2,4]]))
 
-// console.log(canAttendMeetings([[2,4],[7,10]]))
+// console.log(canAttendMeetings([[2,4],[7,10],[9,3])) //false
