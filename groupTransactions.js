@@ -26,8 +26,9 @@ const groupTransactions = transactions => {
     descSort.sort((a, b) => { return b[1] - a[1] })
 
     //Sort ascending alphabetically ONLY for item names with matching trans number
-    let alphaArr = descSort.sort((a, b) => {
+    let alphaSort = descSort.sort((a, b) => {
         if(a[1] === b[1]){
+
             let x = a[0]
             let y = b[0]
 
@@ -35,29 +36,11 @@ const groupTransactions = transactions => {
         }
         return a[0] - b[0]
     })
-
+    
     //Convert each array element to single string and replace comma with space  
-    let finalArr = alphaArr.map(ele => ele.toString('').replace(',', ' '))
+    let finalArr = alphaSort.map(subArr => subArr.toString('').replace(',', ' '))
     return finalArr
-
 }
 
 
 console.log(groupTransactions(['purse', 'purse', 'belt', 'jeans', 'jeans']))
-
-
-
-//-----old way I was doing descending sort-----//
-
-    // for(let i = 0; i < descSort.length; i++){
-    //     let highest = i 
-    //     for(let j = i + 1; j < descSort.length; j++){
-    //         if(descSort[j] > descSort[highest]) highest = j   
-    //     }
-    //         if(i !== highest){
-    //             let temp = descSort[i]
-    //             descSort[i] = descSort[highest]
-    //             descSort[highest] = temp
-    //         }
-    // }
-
