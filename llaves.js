@@ -1,12 +1,17 @@
 const pasarPorTodos = cuartos => {
+    //Keep track of visited rooms (subarrays)
+    //Start by adding first subarray, since we already have access
+    //Llaves initially contains key for first room bc we're in it already
     let cuartosVisitados = [];
-    cuartosVisitados.push(cuartos[0])
-    let llaves = [0]
-    console.log(cuartosVisitados, llaves)
+    cuartosVisitados.push(cuartos[0]);
+    let llaves = [0];
+
+    let cuarto = cuartosVisitados.shift();
+    console.log(cuarto)
 }
 
 
-console.log(canVisitAllRooms([[1,3],[2,0,1],[0,3], [0]]))
+console.log(pasarPorTodos([[1,3],[2,0,1],[0,3], [0]]))
 
 
 // var canVisitAllRooms = function(rooms) {
