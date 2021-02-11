@@ -19,6 +19,14 @@ const pasarPorTodos = rooms => {
             }
         }
     }
+
+    for(let i = 1; i < rooms.length; i++){
+       if(!keys.includes(i)) {
+           return false
+       } else {
+           return true
+       }
+    }
     
 }
 
