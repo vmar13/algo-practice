@@ -14,3 +14,18 @@ const solve= (nums) => {
 
 console.log(solve([1, 7, 3, 4, 10]))
 //2
+
+
+//COMPARE LATER
+solve = (nums) => {
+    let number = [...nums]
+    let count = 0
+    let sorted = nums.sort((a, b) => a - b)
+
+    for (let i = 0; i < nums.length; i++) {
+        if (number[i] === sorted[i]) {
+            count++
+        }
+    }
+    return count
+}
