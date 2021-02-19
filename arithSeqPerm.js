@@ -20,3 +20,20 @@ const solve= (nums) => {
 console.log(solve([7, 1, 5, 3]))
 
 //true
+
+//BELOW: faster solution
+class Solution {
+    solve(nums) {
+        if(nums.length === 2) {
+            return true
+        }
+        let sorted = nums.sort((a, b) => a-b)
+        let diff = sorted[1] - sorted[0]
+        for(let i = 1; i < sorted.length; i++){
+            if(diff != (sorted[i]-sorted[i-1])){
+                return false
+            }
+        }
+        return true
+    }
+}
