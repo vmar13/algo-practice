@@ -1,16 +1,12 @@
-class Solution {
-    solve(nums) {
-  
-        if (nums.length === 0) return -1        
+//Given a list of unique integers nums sorted in ascending order, 
+//return the minimum i such that nums[i] == i. If there's no solution, return -1.
+//This should be done in O(log(n)) time.
 
-        for(let i = 0; i < nums.length; i++){
-            if(i === nums[i]){
-                return nums[i]
-            } 
-        }
-        return -1
-    }
+const fixedPoint = nums => {
+
 }
+
+console.log(fixedPoint([-5, -2, 0, 3, 4]))
 
 
 //USING BINARY SEARCH TO ACHIEVE O LOG(N)
