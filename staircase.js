@@ -1,9 +1,11 @@
-//This is a staircase of size :
+//This is a staircase of size n:
 
-//#
-//##
-//###
-//####
+//     #
+//    ##
+//   ###
+//  ####
+// #####
+//######
 //Its base and height are both equal to n. It is drawn using
 // # symbols and spaces. The last line is not preceded by any spaces.
 
@@ -19,7 +21,10 @@ const staircase = n => {
             //this loop adds one space to the string each time
             str += ' ';
         }
-        
+        //this loop adds one hashtag each time
+        for (let k = 0; k < i + 1; k++) {
+            str += '#';
+        }
         console.log(str)
     }
     
