@@ -1,6 +1,7 @@
 //Given a list of unique integers nums sorted in ascending order, 
 //return the minimum i such that nums[i] == i. If there's no solution, return -1.
 //This should be done in O(log(n)) time.
+//O(log(n)) is a hint to use binary search!
 
 //USING BINARY SEARCH TO ACHIEVE O LOG(N)
 

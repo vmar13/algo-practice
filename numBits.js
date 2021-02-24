@@ -2,8 +2,11 @@
 
 
 const solve = (n) => {
-    let binary = n.toString(2).split("")
-    return binary.filter(num => num > 0).length
+    // let binary = n.toString(2).split("")
+    let binary = n.toString(2).split('')
+    // 1010
+    //['1', '0', '1', '0']
+    return binary.filter(num => num === '1').length
 }
 
 console.log(solve(10))
