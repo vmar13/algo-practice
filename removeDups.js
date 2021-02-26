@@ -13,7 +13,10 @@ const removeDuplicates = nums => {
             nums[p1] = nums[p2]
         }
     }
-    return p1 + 1
+  
+    // return p1 + 1
+    return nums
+
 }
 
 console.log(removeDuplicates(nums))
