@@ -9,8 +9,9 @@ const timeConversion = s => {
   if (dayOrNight === 'A') {
     s.substring(0,2) === '12' ? hour = '00' : null;
   } else {
-    s.substring(0,2) === '12' ? hour = s.substring(0,2) : null;
+    s.substring(0,2) === '12' ? hour = s.substring(0,2) : hour = parseInt(s.substring(0,2), 10) + 12;
   }
+  return hour + s.substring(2,8);
 }
 
 console.log(timeConversion('07:05:45PM'))
