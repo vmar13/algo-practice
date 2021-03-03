@@ -7,9 +7,9 @@ const timeConversion = s => {
   let hour = '';
 
   if (dayOrNight === 'A') {
-
+    s.substring(0,2) === '12' ? hour = '00' : null;
   } else {
-
+    s.substring(0,2) === '12' ? hour = s.substring(0,2) : null;
   }
 }
 
