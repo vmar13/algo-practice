@@ -4,7 +4,6 @@
 
 const timeConversion = s => {
   let dayOrNight = s.charAt(8);
-  console.log(dayOrNight)
   let hour = '';
 
   if (dayOrNight === 'A') {
@@ -15,3 +14,7 @@ const timeConversion = s => {
 }
 
 console.log(timeConversion('07:05:45PM'))
+
+//12AM to 00
+//1AM - 12PM -> do nothing
+//1PM - 11PM -> add 12
