@@ -20,6 +20,6 @@ const timeConversion = s => {
         // newTime = strArr.splice(0, 2, added12)
         
     }
-    // newTime = strArr.toString().replace(startingHour, added12)
-    console.log(newTime.unshift(added12))
+    newTime = strArr.toString().replace(startingHour, added12)
+    // console.log(newTime.unshift(added12))
 }
