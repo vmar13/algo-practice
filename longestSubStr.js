@@ -1,3 +1,6 @@
+//Given a string s, find the length of the longest substring 
+//without repeating characters.
+
 var lengthOfLongestSubstring = function(s) {
     let k = 0;
     let maxLength = 0;
@@ -16,3 +19,6 @@ var lengthOfLongestSubstring = function(s) {
     return maxLength;
 }
 
+//Input: s = "abcabcbb"
+//Output: 3
+//Explanation: The answer is "abc", with the length of 3.
