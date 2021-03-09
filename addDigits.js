@@ -1,3 +1,7 @@
+//Given a non-negative integer num, 
+//repeatedly add all its digits until the result
+// has only one digit.
+
 const addDigits = num => {
     let newNum = num.toString()
     let sum = 0;
