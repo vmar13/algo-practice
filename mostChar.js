@@ -7,6 +7,11 @@ const maxChar = str => {
         strObj[char] = strObj[char] + 1 || 1
     }
 
-   
+    for(let char in strObj){
+        if(strObj[char] > maxValue){
+            maxChar = char 
+            maxValue = strObj[char]
+        }
+    }
     return maxChar
 }
