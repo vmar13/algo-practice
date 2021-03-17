@@ -6,16 +6,27 @@
 //(signed or unsigned).
 
 const reverse = x => {
-    numStr = x.toString()
-    let finalNum = parseInt(numStr.split('').reverse().join(''))
-    if (finalNum > 2**31 - 1) return 0
+    let reversedArr = []
+    let xArr = x.toString().split('')
+    for(let i = 0; i < xArr.length; i++){
+        reversedArr.unshift(parseInt(xArr[i]))
+    }
+    let reverse = parseInt(reversedArr.join(""))
+    if (reverse > 2**31 -1) return 0
+    return x > 0 ? reverse : -reverse
+};
+
+// const reverse = x => {
+//     numStr = x.toString()
+//     let finalNum = parseInt(numStr.split('').reverse().join(''))
+//     if (finalNum > 2**31 - 1) return 0
     
-    if (numStr.includes('-')) {
-        return '-' + finalNum
-    } else {
-        return finalNum
-    }   
-}
+//     if (numStr.includes('-')) {
+//         return '-' + finalNum
+//     } else {
+//         return finalNum
+//     }   
+// }
 
 console.log(reverse(321))
 
