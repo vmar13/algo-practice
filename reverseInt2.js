@@ -1,4 +1,4 @@
-var reverse = function(x) {
+const reverse = x => {
     numStr = x.toString()
     let finalNum = parseInt(numStr.split('').reverse().join(''))
     if (finalNum > 2**31 - 1) return 0
@@ -8,4 +8,6 @@ var reverse = function(x) {
     } else {
         return finalNum
     }   
-};
+}
+
+console.log(reverse(321))
