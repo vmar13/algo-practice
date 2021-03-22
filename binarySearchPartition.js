@@ -12,6 +12,14 @@ let binarySearchWithPartition = (array, element, compare = defaultCompare) => {
 	const [left, right] =
 		comparison === -1 ? [0, middle - 1] : [middle + 1, array.length];
 
+	const subIndex = binarySearchWithArraySplitting(
+		array.slice(left, right),
+		element,
+		compare
+	);
 
 	return subIndex === -1 ? -1 : left + subIndex;
 };
+
+let binarySearchWithPartitionAndView = (array, ...args) =>
+	binarySearchWithPartition(ArrayView(array), ...args);
