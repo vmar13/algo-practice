@@ -16,6 +16,7 @@ const firstUniqChar = s => {
         }
     }
     
-    
+    let char = s.find(char => char === firstNonRepeat[0])
+    return s.indexOf(char)
     
 };
