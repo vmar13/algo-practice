@@ -6,6 +6,16 @@ const firstUniqChar = s => {
     let charObj = {}; 
     let firstNonRepeat = [];
     
-   
+    for (let char of s) {
+        charObj[char] = charObj[char]+1 || 1
+    }
+    
+    for (let key in charObj) {
+        if (charObj[key] === 1) {
+            firstNonRepeat.push(key) 
+        }
+    }
+    
+    
     
 };
