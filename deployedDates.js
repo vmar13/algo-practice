@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // .then(data => console.log(data.client_environments))
         .then(data => {
             let clientEnvirons = data.client_environments //AoO
+            let mostRecDeploys = clientEnvirons.map(objEle => objEle.most_recent_deploys)
             
         })
     }
