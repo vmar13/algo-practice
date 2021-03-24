@@ -8,5 +8,11 @@ const intersection = (nums1, nums2) => {
     let longest = nums1.length > nums2.length ? nums1 : nums2
     let shortest = nums1.length < nums2.length ? nums1 : nums2
     
+    for (let i = 0; i < shortest.length; i++) {
+        if (longest.includes(shortest[i])) {
+            uniq.add(shortest[i])
+        }
+    }
     
+    return Array.from(uniq);
 }
