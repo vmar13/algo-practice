@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let clientEnvirons = data.client_environments //AoO
             let mostRecDeploys = clientEnvirons.map(objEle => objEle.most_recent_deploys)
             let platAPI = mostRecDeploys.map(depEle => depEle['platform-api'])
-            
+            let deployedDates = platAPI.map(dateObj => dateObj.deployed_at)
+            deployedDates.forEach(date => console.log(date))
         })
     }
 
