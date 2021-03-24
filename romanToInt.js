@@ -15,6 +15,8 @@ var romanToInt = function(s) {
         if (roman[s[i]] < roman[s[i + 1]]) {
             sum += roman[s[i + 1]] - roman[s[i]]
             i++
+        } else {
+            sum += roman[s[i]] 
         } 
     }
     return sum
