@@ -1,39 +1,22 @@
 //Given a list of integers nums, return whether you can rearrange the order of nums 
 //such that the difference between every consecutive two numbers is the same.
 
-const solve= (nums) => {
-    let sorted = nums.sort((a, b) => a-b)
-    let diff = sorted[1] - sorted[0]
-
-    for(let i = 0; i <= sorted.length; i++){
-        if(sorted[i+1]){
-        if((sorted[i+1]-sorted[i]) != diff){
-            
+const arithSeqPerm = nums => {
+   nums.sort();
+   let diff = nums[1] - nums[0]; 
+   
+   for (let i = 1; i < nums.length; i++) {
+        if ((nums[i] - nums[i - 1]) !== diff) {
             return false
         }
-        }
-    }
-    
-        return true
+   }
+
+   return true
 }
 
-console.log(solve([7, 1, 5, 3]))
+console.log(arithSeqPerm([7, 1, 5, 3]))
 
+// 3 - 1   nums[i] = 3
+//5 - 3    nums[i] = 5
+//7 - 5    nums[i] = 7
 //true
-
-//BELOW: faster solution
-class Solution {
-    solve(nums) {
-        if(nums.length === 2) {
-            return true
-        }
-        let sorted = nums.sort((a, b) => a-b)
-        let diff = sorted[1] - sorted[0]
-        for(let i = 1; i < sorted.length; i++){
-            if(diff != (sorted[i]-sorted[i-1])){
-                return false
-            }
-        }
-        return true
-    }
-}
