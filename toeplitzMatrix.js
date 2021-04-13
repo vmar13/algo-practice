@@ -19,3 +19,7 @@ let quadMatrix = [
 ]
 
 console.log(toeplitz(quadMatrix))
+
+//Notes: 
+// j < matrix.length  would make the loop run for the length of the outer array (4)
+// j < matrix[i].length makes the inner j loop run for only the length of that subArr (3)
