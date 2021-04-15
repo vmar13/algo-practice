@@ -1,18 +1,30 @@
-//large to small sort on binarySearch
+//Given a list of strings shows, a list of integers durations,
+// and an integer k, where shows[i] and durations[i] represent 
+//the name and duration watched by the ith person, return the total duration 
+//watched of the k most watched shows.
 
-let viewedShows = {}
-for(let i = 0; i < shows.length; i++){
-    viewedShows[shows[i]] ? viewedShows[shows[i]] += durations[i] :
-    viewedShows[shows[i]] = durations[i]
-}
+const kLongShowDur = (shows, durations, k) => {
+    let showDur = {};
+    let totalDur = 0;
 
-let topShows = Object.values(viewedShows)
-topShows.sort((a,b) => b-a)
-let results = 0
-let i = 0
-while(i<k){
-    results += topShows[i]
-    i++
-}
+    for (let i = 0; i < shows.length; i++) {
+        showDur[shows[i]] ? showDur[shows[i]] += durations[i] : showDur[shows[i]] = durations[i]          
+    }
+    
+    let mostWatched = Object.values(showDur).sort((a,b) => b - a)
 
-return results
+    for (let i = 0; i < k; i++) {
+        totalDur += mostWatched[i]
+    }
+    
+    return totalDur
+ }
+
+//INPUT:
+let showList = ["Top Gun", "Aviator", "Top Gun", "Roma", "Logan"]
+let durs = [5, 3, 5, 13, 4]
+let k = 2
+
+ console.log(kLongShowDur(showList, durs, k))
+
+ //OUTPUT: 23
