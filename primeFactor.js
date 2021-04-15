@@ -1,9 +1,18 @@
 let divisor = 2;
 let number = 202355375;
-while(number > 1){
-    if(number % divisor === 0){
-        number /= divisor
-    } else {
-        divisor++
+
+const divNum = (div, num) => {
+    while(num > 1){
+        if(num % div === 0){
+            num /= div
+            // console.log(num)
+
+        } else {
+            div++
+        }
     }
+    return num
 }
+
+
+console.log(divNum(divisor, number))
