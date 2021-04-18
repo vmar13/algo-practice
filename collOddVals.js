@@ -1,5 +1,19 @@
-// **** HELPER METHOD RECURSION ****
+// **** PURE RECURSION ****
+const pureCollOddVals = arr => {
+    let newArr = [];
 
+    if (arr.length === 0) return newArr;
+
+    if (arr[0] % 2 !== 0) {
+        newArr.push(arr[0]);
+    }
+
+    newArr = newArr.concat(pureCollOddVals(arr.slice(1)));
+    return newArr;
+}
+
+
+// **** HELPER METHOD RECURSION ****
 const collectOddValues = arr => {
     let result = [];
 
@@ -17,4 +31,5 @@ const collectOddValues = arr => {
     return result;
 }
 
-console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))
+// console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))
+console.log(pureCollOddVals([1,2,3,4,5,6,7,8,9]))
