@@ -14,6 +14,14 @@ const pureCollOddVals = arr => {
 }
 
 // What's happening on line 12 above: 
+// [1].concat(pureCollOddVals([3,4,5...]))
+// [3].concat(pureCollOddVals([5,6,7...]))
+// [5].concat(pureCollOddVals([7,8,9...])) 
+// [9].concat(pureCollOddVals([9])) 
+// [[1],[3],[5],[7],[9]]
+// return newArr: [1,3,5,7,9]
+
+// --OR--
 //arr: 1,2,3,4,5,6,7,8,9 [1]
 //collOddVals.js:9 arr: 3,4,5,6,7,8,9 [3]
 //collOddVals.js:9 arr: 5,6,7,8,9 [5]
