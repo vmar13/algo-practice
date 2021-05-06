@@ -1,16 +1,46 @@
-let p = new Promise ((resolve, reject) => {
-    let a = 1 + 1;
-    if (a == 2) {
-        resolve('Success');
-    } else {
-        reject('Failed');
-    }
-});
+const userLeft = false;
+const userWatchingCatMeme = false;
 
-p.then((message) => {
-    console.log(`This is in the then portion ${message}`);
-}).catch((message) => {
-    console.log(`This is the catch portion ${message}`);
+function watchTutorialPromise() {
+    return new Promise((resolve, reject) => {
+        if(userLeft) {
+            reject({
+                name: 'User Left',
+                message: ':('
+            })
+        } else if (userWatchingCatMeme) {
+            reject({
+                name: 'User Watching Cat Meme',
+                message: 'Cat > Person'
+            })
+        } else {
+            resolve('Thumbs up and subscribe!')
+        }
+    })
+}
+
+watchTutorialPromise().then((message) => {
+    console.log(`Success: ${message}`)
+}).catch((error) => {
+    console.log(`Error: ${error.name} ${error.message}`)
 })
 
-console.log(p)
+//This is a promise constructor
+// let p = new Promise ((resolve, reject) => {
+//     let a = 1 + 1;
+//     if (a == 2) {
+//         resolve('Success');
+//     } else {
+//         reject('Failed');
+//     }
+// });
+
+// //.then is only called when the promise resolves successfully
+// //,catch is called if the promise is rejected/fails
+// p.then((message) => {
+//     console.log(`This is in the then portion ${message}`);
+// }).catch((message) => {
+//     console.log(`This is the catch portion ${message}`);
+// })
+
+// console.log(p)
