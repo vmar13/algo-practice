@@ -1,29 +1,29 @@
-const userLeft = false;
-const userWatchingCatMeme = false;
+// const userLeft = false;
+// const userWatchingCatMeme = false;
 
-function watchTutorialPromise() {
-    return new Promise((resolve, reject) => {
-        if(userLeft) {
-            reject({
-                name: 'User Left',
-                message: ':('
-            })
-        } else if (userWatchingCatMeme) {
-            reject({
-                name: 'User Watching Cat Meme',
-                message: 'Cat > Person'
-            })
-        } else {
-            resolve('Thumbs up and subscribe!')
-        }
-    })
-}
+// function watchTutorialPromise() {
+//     return new Promise((resolve, reject) => {
+//         if(userLeft) {
+//             reject({
+//                 name: 'User Left',
+//                 message: ':('
+//             })
+//         } else if (userWatchingCatMeme) {
+//             reject({
+//                 name: 'User Watching Cat Meme',
+//                 message: 'Cat > Person'
+//             })
+//         } else {
+//             resolve('Thumbs up and subscribe!')
+//         }
+//     })
+// }
 
-watchTutorialPromise().then((message) => {
-    console.log(`Success: ${message}`)
-}).catch((error) => {
-    console.log(`Error: ${error.name} ${error.message}`)
-})
+// watchTutorialPromise().then((message) => {
+//     console.log(`Success: ${message}`)
+// }).catch((error) => {
+//     console.log(`Error: ${error.name} ${error.message}`)
+// })
 
 //This is a promise constructor
 // let p = new Promise ((resolve, reject) => {
@@ -44,3 +44,27 @@ watchTutorialPromise().then((message) => {
 // })
 
 // console.log(p)
+
+//**** USING PROMISE.ALL *****/
+const recordVideoOne = new Promise((resolve, reject) => {
+    resolve('Video 1 recorded');
+})
+
+const recordVideoTwo = new Promise((resolve, reject) => {
+    resolve('Video 2 recorded');
+})
+
+const recordVideoThree = new Promise((resolve, reject) => {
+    resolve('Video 3 recorded');
+    // reject('Nope');
+})
+
+Promise.all([
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then(messages => {
+    console.log(messages)
+}).catch(error => {
+    console.log(error)
+})
