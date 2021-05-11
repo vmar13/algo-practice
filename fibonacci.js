@@ -1,6 +1,6 @@
 //Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
 
-const fib = n => {
+const fibonacci = n => {
   if (n < 3) return 1;
 
   let prev = 1;
@@ -14,31 +14,23 @@ const fib = n => {
   return curr;
 }
 
-console.log(fib(3))
+console.log(fibonacci(3))
 
-// //recursive solution
+//-------RECURSIVE SOLUTION------//
 
-const fib1 = num => {
+const fib = num => {
   if (num <= 2) return 1;
-  return fib1(num - 1) + fib1(num - 2);
+  return fib(num - 1) + fib(num - 2);
 }
 
-//console.log(fib1(5)) //Find the 5th num in the fibonacci sequence
-// //fib1(5 - 1) + fib1(5 - 2) // 4 + 3
-// //fib1(4 - 1) + fib1(4 - 2) // 3 + 2
-// //fib1(3 - 1) + 1          // 2 + 1 = 3
-// //1 + 1 = 2, so 3 + 2 = 5
-
-//fib1(2) // 1
-// //returns 1
-
-//fib1(3) // 2
-// fib1(3 - 1) + fib1(3 - 2)  // 2 + 1
-// 1 + 1 = 2
-
-//fib1(4) // 3
-// fib1(4 - 1) + fib1(4 - 2) // 3 + 2
-// fib1(3 - 1) + 1           // 2 + 1 = 3
+//console.log(fib(5)) //Find the 5th num in the fibonacci sequence
+//----------------------------CALL STACK----------------------------------------------------------------------------//
+//STEP 3: fib(3)       STEP 4: fib(3) = fib(2) + fib(1) = 1 + 1 = 2   //then, this gets popped off the stack
+//STEP 2: fib(4)       STEP 5: fib(4) = fib(3) + fib(2) = 2 + 1 = 3   //fib(4) evals to fib(3), which we already know eval'd to 2 PLUS fib(2), which returns 1, so 2 + 1
+//STEP 1: fib(5)       STEP 6: fib(5) = fib(4) + fib(3) = 3 + fib(3)  //We have access to the return val of fib(4), which was 3, but not fib(3) bc it got popped off the call stack
+//                     STEP 7: fib(3) = fib(2) + fib(1) = 1 + 1 = 2   //We have to re-run fib(3) in order to get the return val for fib(5) to finish running
+//                     STEP 8: fib(5) = 3 + 2 = 5                     //We finally have both return vals of fib(4) and fib(3), so we add them up               
+//------------------------------------------------------------------------------------------------------------------//
 
 
 // //solution with memoization
