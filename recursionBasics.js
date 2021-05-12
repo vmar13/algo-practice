@@ -50,14 +50,14 @@ const sumRangeRec = n => {
 //          1
 
 //-------RECURSIVE SOLUTION #2--------//
-const sumRangeRecursion = (n, total = 0) => {
-    if (n <= 0) return total;
-    return sumRangeRecursion(n - 1, total + n);
-}
-
+const sumRangeRecursion = (n, total = 0) => {      //Since we're inside of a recursive func, any variable that
+    if (n <= 0) return total;                      //we set in this func is only available to that 
+    return sumRangeRecursion(n - 1, total + n);    //one single version of the recursive func--not to all of them,
+}                                                  //which is why we need to pass the total value to all recursive funcs
+                                                   //and by default, the first time we call the func, we want total to be 0
 //sumRangeRec(2, 3)
         //sumRangeRec(1, 5)
                 //sumRangeRec(0, 6)
                     //return 6
 
-console.log(sumRangeRecursion(3))
+console.log(sumRangeRecursion(3))    //Will default total to 0, even tho we don't pass it in
