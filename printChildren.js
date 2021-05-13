@@ -24,3 +24,8 @@ const arbol = {
 }
 
 console.log(printChildrenRecursive(arbol))
+
+//Jim
+//Zoe
+//Kyle
+//Sophia
