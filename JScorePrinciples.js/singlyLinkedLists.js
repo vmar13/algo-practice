@@ -33,7 +33,14 @@ class SinglyLinkedList {
             newTail = current;
             current = current.next;
         }
-        console.log(current.val, newTail.val)
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
     }
 }
 
