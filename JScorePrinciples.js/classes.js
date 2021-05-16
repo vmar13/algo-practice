@@ -27,6 +27,10 @@ class Student {
         let sum = this.scores.reduce(function(a, b){return a + b});
         return sum/this.scores.length;
     }
+
+    static enrollStudents() {
+        return 'ENROLLING STUDENTS';
+    }
 }
 
 let vani = new Student('Vanessa', 'Martinez')
@@ -37,3 +41,4 @@ vani.fullName()
 console.log(vani.addScore(7))
 console.log(vani.addScore(90))
 console.log(vani.calculateAvg())
+console.log(Student.enrollStudents()) //can't call here bc I need to create more students
