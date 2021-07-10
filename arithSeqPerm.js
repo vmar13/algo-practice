@@ -2,16 +2,15 @@
 //such that the difference between every consecutive two numbers is the same.
 
 const arithSeqPerm = nums => {
-   nums.sort();
-   let diff = nums[1] - nums[0]; 
-   
-   for (let i = 1; i < nums.length; i++) {
-        if ((nums[i] - nums[i - 1]) !== diff) {
-            return false
+    nums.sort(); // [1,3,5,7]
+    let diff = nums[1] - nums[0]; // 2
+    
+    for (i = 1; i < nums.length; i++) {  //2nd ele minus previous ele & compare to diff
+        if (nums[i] - nums[i - 1] !== diff) {
+            return false;
         }
-   }
-
-   return true
+    }
+    return true;
 }
 
 console.log(arithSeqPerm([7, 1, 5, 3]))

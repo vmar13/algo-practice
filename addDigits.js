@@ -19,7 +19,9 @@ const addDigits = num => {
 }
 
 console.log(addDigits(99))
-
+// 9 + 9 = 18
+// 1 + 8 = 9
+// 9
 
 
 
