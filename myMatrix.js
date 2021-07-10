@@ -4,46 +4,17 @@ let myMatrix = [[1, 2, 3, 4],
                 [10,9, 8, 7]];
 
 const unroll = matrix => {
-    console.log(...matrix.shift())
+    if (matrix.length === 0) return; // Base case for recursion
+
+    console.log(...matrix.shift()) //top: 1 2 3 4
+
+    console.log(...matrix.map(subArr => subArr.pop())) //right: 5 6 7
+
+    console.log(...matrix.pop().reverse()) // bottom: 8 9 10
+
+    console.log(...matrix.map(subArr => subArr.shift()).reverse()) // left: 11 12  (must call .reverse OUTSIDE of .map bc .map returns an array upon which you can call .reverse)
+    
+    unroll(matrix) // Use recursion for the remaining matrix
 }
 
 console.log(unroll(myMatrix))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function unroll(matrix) {
-
-// //exit condition
-// if(myMatrix.length === 0) return;
-
-// //top
-// console.log(...myMatrix.shift())
-
-// //right side (last elem of each)
-// console.log(...myMatrix.map(arrayEle => arrayEle.pop()))
-
-// //bottom in reverse (.reverse())
-// console.log(...myMatrix.pop().reverse())
-
-// //left side (first elem of each)
-// console.log(...myMatrix.map(arrayEle => arrayEle.shift()).reverse())
-
-
-// unroll(matrix)
-
-// }
-// unroll(myMatrix);
-
-
-// end result: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
