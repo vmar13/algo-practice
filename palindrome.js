@@ -1,15 +1,16 @@
-const palin5 = str => {
-    str = str.toLowerCase().replace(/[\W_]/g, '')
-    let reversedStr = str.split('').reverse().join('')
+const palindrome = str => {
+    str = str.toLowerCase().replace(/[\W_/]/g, '')
+    let revStr = str.split('').reverse().join('')
+    if (str === revStr) {
+        return true
+    } 
 
-    if(str === reversedStr) return true
-    else return false 
-    // if(str === reversedStr){
-    //     return true
-    // } else {
-    //     return false
-    // }
+    return false 
 }
 
-console.log(palin5('oce3!!nTT_'))
+console.log(palindrome('rAce!!C_ar'))
+
+
+
+
 

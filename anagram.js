@@ -1,26 +1,50 @@
 //Write a function that takes in two strings and determines if they're
 //anagrams of each other. If so, return true. If not, return false.
 
-const validAnagram = (str1, str2) => {
-    if(str1.length !== str2.length) return false
+const anagram = (str1, str2) => {
+    if (str1.length !== str2.length) return false;
+    let freq = {};
 
-    let str1Obj = {};
-    for (let char of str1){
-        str1Obj[char] = str1Obj[char]+1 || 1
-        // str1Obj[char] ? str1Obj[char]+=1 : str1Obj[char] = 1
+    for (let char of str1) {
+        freq[char] = freq[char] + 1 || 1
     }
 
     for (let char of str2) {
-        if(!str1Obj[char]){
-            return false
+        if (!freq[char]) {
+            return false;
         } else {
-            str1Obj[char]-=1
+            freq[char] --
         }
     }
-    return true
+
+    return true;
+
 }
 
-console.log(validAnagram('listen', 'silent'))
+console.log(anagram('listen', 'silent'))
+
+
+
+// const validAnagram = (str1, str2) => {
+//     if(str1.length !== str2.length) return false
+
+//     let str1Obj = {};
+//     for (let char of str1){
+//         str1Obj[char] = str1Obj[char]+1 || 1
+//         // str1Obj[char] ? str1Obj[char]+=1 : str1Obj[char] = 1
+//     }
+
+//     for (let char of str2) {
+//         if(!str1Obj[char]){
+//             return false
+//         } else {
+//             str1Obj[char]-=1
+//         }
+//     }
+//     return true
+// }
+
+// console.log(validAnagram('listen', 'silent'))
 
 
 function incrementIfZero1(base,element) {
