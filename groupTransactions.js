@@ -10,37 +10,61 @@
 //The return array, sorted as required, is:
 // ['jeans 2', 'purse 2', 'belt 1']
 
-
-const groupTransactions = transactions => {
-
-    let txCount = {}
-    //Count the number of trans for each item and put in obj (freq counter)
-    for(let item of transactions){
-        txCount[item] ? txCount[item] += 1 : txCount[item] = 1
+const groupTransactions = arr => {
+    let count = {};
+    for (let item of arr) {                  // {purse: 2, belt: 1, jeans: 2}
+        count[item] = count[item] + 1 || 1;
     }
 
-    //Convert object into array 
-    let descSort = Object.entries(txCount)
-
-    //Sort descending by trans number
-    descSort.sort((a, b) => { return b[1] - a[1] })
-
-    //Sort ascending alphabetically ONLY for item names with matching trans number
-    let alphaSort = descSort.sort((a, b) => {
-        if(a[1] === b[1]){
-
-            let x = a[0]
-            let y = b[0]
-
-            return x < y ? -1 : x > y ? 1 : 0
-        }
-        return a[0] - b[0]
-    })
+    let transax = Object.entries(count).sort((a,b) => (b[1] - a[1])); // [['purse', 2]['jeans', 2]['belt', 1]]
     
-    //Convert each array element to single string and replace comma with space  
-    let finalArr = alphaSort.map(subArr => subArr.toString('').replace(',', ' '))
-    return finalArr
+    transax.sort((a,b) => {
+        if (a[1] === b[1]) {
+            let x = a[0];
+            let y = b[0];
+
+            return x < y ? -1 : x > y ? 1 : 0;  
+        }
+        return a[0] - b[0];                      // [['jeans', 2]['purse', 2]['belt', 1]]
+    })
+
+    let finalSorted = transax.map(subArr => subArr.toString().replace(',', ' '));
+    return finalSorted;    // ["jeans 2", "purse 2", "belt 1"]
 }
 
 
 console.log(groupTransactions(['purse', 'purse', 'belt', 'jeans', 'jeans']))
+
+
+// const groupTransactions = transactions => {
+
+//     let txCount = {}
+//     //Count the number of trans for each item and put in obj (freq counter)
+//     for(let item of transactions){
+//         txCount[item] ? txCount[item] += 1 : txCount[item] = 1
+//     }
+
+//     //Convert object into array 
+//     let descSort = Object.entries(txCount)
+
+//     //Sort descending by trans number
+//     descSort.sort((a, b) => { return b[1] - a[1] })
+
+//     //Sort ascending alphabetically ONLY for item names with matching trans number
+//     let alphaSort = descSort.sort((a, b) => {
+//         if(a[1] === b[1]){
+
+//             let x = a[0]
+//             let y = b[0]
+
+//             return x < y ? -1 : x > y ? 1 : 0
+//         }
+//         return a[0] - b[0]
+//     })
+    
+//     //Convert each array element to single string and replace comma with space  
+//     let finalArr = alphaSort.map(subArr => subArr.toString('').replace(',', ' '))
+//     return finalArr
+// }
+
+
