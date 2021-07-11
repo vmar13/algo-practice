@@ -5,7 +5,7 @@ const highFreq = nums => {
     if(nums.length === 0) return 0;
 
     let freq = {};
-    let max = 0;
+    // let max = 0;
 
     for(let num of nums) {
         freq[num] ? freq[num]+= 1 : freq[num] = 1;
@@ -13,10 +13,14 @@ const highFreq = nums => {
     // return freq
     //{1: 5, 4: 1, 7: 2}
 
-   for(let num in freq) {
-        max = Math.max(max, freq[num])
-   }
-   return max
+//    for(let num in freq) {
+//         max = Math.max(max, freq[num])
+//    }
+//    return max
+
+    let valsArr = Object.values(freq);  // [5, 1, 2]
+    let max = Math.max(...valsArr)
+    console.log(max)
 }
 
 console.log(highFreq([1, 4, 1, 7, 1, 7, 1, 1]))
