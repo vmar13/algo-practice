@@ -5,11 +5,11 @@
 
 const binarySearch = (arr, val) => {
     let left = 0
-    let right= arr.length - 1
-    let middle = Math.floor((left + right) / 2)
-    // console.log(left, right, middle)
+    let right = arr.length - 1
+    let middle = Math.floor((left + right) / 2) // median index
+    //console.log(left, middle, right) // 0 5 10
 
-    //SHORTER CODE
+    // //SHORTER CODE
     while(arr[middle] !== val && left <= right){
         if(val < arr[middle]) right = middle - 1
         else left = middle + 1
@@ -31,7 +31,7 @@ const binarySearch = (arr, val) => {
   //       return middle
   //     } 
   //     return -1
-  // }
+  //}
 
   console.log(binarySearch([1,2,3,4,5,8,10,13,14,17,20], 17))
 
@@ -51,5 +51,3 @@ const binarySearch = (arr, val) => {
     //   }
     // }
   // }
-  
-  
