@@ -11,24 +11,25 @@ let k = 2
 const kLongShowDur = (arrShows, arrDurs, integer) => {
     let showsAndDur = {};
     let mostWatched = [];
-    //Find 2 most watched shows by creating object with shows and their corresponding durations.
+    // Create object with shows and their corresponding durations.
     for (let i = 0; i < arrShows.length; i++) {  // showsAndDur = { 'Top Gun': 10, 'Aviator': 3, 'Roma': 13, 'Logan': 4 }
         showsAndDur[arrShows[i]] = showsAndDur[arrShows[i]] + arrDurs[i] || arrDurs[i] 
     }
 
-    // Then, find the first max (most watched show).
+    // Then, create array of just duration values and sort in descending order to find 2 most watched.
     let durVals = Object.values(showsAndDur).sort((a,b) => b - a)      // [13, 10, 4, 3]
     
+    // Add just the first 2 (k) durations to the mostWatched obj.
     for (let i = 0; i < integer; i++) {
         mostWatched.push(durVals[i])
     }
     
-    return mostWatched.reduce((acc, currVal) => acc + currVal)
+    // Add up duration of two most watched shows for total duration.
+    return mostWatched.reduce((acc, currVal) => acc + currVal)        //23
 }
-
 
 console.log(kLongShowDur(showList, durs, k))
 
- //OUTPUT: 23
+
 
 
