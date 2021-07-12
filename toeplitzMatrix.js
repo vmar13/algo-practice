@@ -2,13 +2,15 @@
 //determine whether it's a Toeplitz matrix. A Toeplitz is 
 //one where every diagonal descending from left to right has the same value.
 
-const toeplitz = matrix => {
+const toeplitzMatrix = matrix => {
     for (let i = 1; i < matrix.length; i++) {
         for (let j = 1; j < matrix[i].length; j++) {
-            if (matrix[i][j] !== matrix[i - 1][j - 1]) return false
+            if (matrix[i][j] !== matrix[i - 1][j - 1]) {
+                return false;
+            }
         }
     }
-    return true
+    return true;
 }
 
 let quadMatrix = [
@@ -18,7 +20,7 @@ let quadMatrix = [
     [5, 4, 3]
 ]
 
-console.log(toeplitz(quadMatrix))
+console.log(toeplitzMatrix(quadMatrix))
 
 //Notes: 
 // j < matrix.length  would make the loop run for the length of the outer array (4)
